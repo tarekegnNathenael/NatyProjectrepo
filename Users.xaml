@@ -1,0 +1,90 @@
+﻿<UserControl x:Class="newLife.Users"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign ="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:newLife"
+             mc:Ignorable="d" 
+             d:DesignHeight="551" d:DesignWidth="1022"
+             Background="#f5f5f5">
+    <Grid Margin="1">
+        <materialDesign:ColorZone Height="54" CornerRadius="15"  Background="#607d8b" materialDesign:ShadowAssist.ShadowDepth="Depth4">
+            <Grid Margin="3,3,3,0">
+                <TextBlock FontWeight="DemiBold" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" FontStretch="Expanded"
+                       FontStyle="Oblique" Foreground="White" Margin="236,6,257,5" TextAlignment="Center" Width="523">Register New  User into System</TextBlock>
+            </Grid>
+        </materialDesign:ColorZone>
+        <materialDesign:ColorZone Height="485" materialDesign:ColorZoneAssist.Mode="Accent" Margin="0,54,0,0" CornerRadius="10" >
+            <Grid >
+                <materialDesign:PackIcon Kind="AccountCircle" Height="37" Width="31" Margin="10,34,0,0" Foreground="#00897b"/>
+                <TextBlock Margin="46,34,859,414" FontSize="18" TextAlignment="Justify" 
+                           VerticalAlignment="Center" Foreground="#00897b" Opacity=".9" 
+                           FontWeight="DemiBold" Height="37">First Name:</TextBlock>
+                <TextBox Margin="166,34,642,414" Foreground="#00897b" FontSize="15" 
+                         materialDesign:HintAssist.Hint="Enter your name"
+                         materialDesign:ValidationAssist.UsePopup="True"
+                         Name="Users_FirstName"
+                        >
+                </TextBox>
+                <TextBlock Margin="484,34,421,414" FontSize="18" TextAlignment="Justify" 
+                	VerticalAlignment="Center" Foreground="#00897b" Opacity=".9" 
+                	FontWeight="DemiBold" Height="37"><Run Text="Last Name:"/></TextBlock>
+                <TextBox Margin="604,34,174,414" Foreground="#00897b" FontSize="15" 
+                         materialDesign:HintAssist.Hint="Enter Father name"
+                         Name="User_lastName"/>
+                <materialDesign:PackIcon Kind="AccountCircle" Height="37" Width="31" Margin="448,34,0,0" Foreground="#00897b"/>
+                <materialDesign:PackIcon Kind="Phone" Height="36" Width="31" Margin="10,96,0,0" Foreground="#00897b"/>
+                <TextBlock Margin="46,96,859,352" FontSize="18" TextAlignment="Justify" 
+                	VerticalAlignment="Center" Foreground="#00897b" Opacity=".9" 
+                	FontWeight="DemiBold" Height="37"><Run Text="Phone No:"/></TextBlock>
+                <TextBox Margin="166,96,642,352" Foreground="#00897b" FontSize="15"
+                         materialDesign:HintAssist.Hint="Enter Phone number"
+                         Name="User_phoneNumber"/>
+                <materialDesign:PackIcon Kind="AccountMultiplePlus" Height="37" Width="31" Margin="448,96,0,0" Foreground="#00897b"/>
+                <TextBlock Margin="484,96,421,352" FontSize="18" TextAlignment="Justify" 
+                	VerticalAlignment="Center" Foreground="#00897b" Opacity=".9" 
+                	FontWeight="DemiBold" Height="37"><Run Text="Account:"/></TextBlock>
+                <ComboBox Margin="604,96,174,353" Height="36" materialDesign:HintAssist.HintOpacity="0.9"
+                          Name="User_combo"
+                          materialDesign:HintAssist.Hint="Select account type" Foreground="#00897b">
+                    <ComboBoxItem Content="Front-Desk User" />
+                    <ComboBoxItem Content="Reception"/>
+                    <ComboBoxItem Content="Adminstrator"/>
+                </ComboBox>
+                <materialDesign:PackIcon Kind="LockPlus" Height="36" Width="31" Margin="10,152,0,0" Foreground="#00897b"/>
+                <TextBlock Margin="46,160,859,288" FontSize="18" TextAlignment="Justify" 
+                	VerticalAlignment="Center" Foreground="#00897b" Opacity=".9" 
+                	FontWeight="DemiBold" Height="37"><Run Text="Password:"/></TextBlock>
+                <PasswordBox Margin="166,151,642,297" Foreground="#00897b" FontSize="15"
+                             Name="User_password"
+                             materialDesign:HintAssist.Hint="Enter password"/>
+                <materialDesign:PackIcon Kind="LockPlus" Height="37" Width="31" Margin="448,160,0,0" Foreground="#00897b"/>
+                <TextBlock Margin="484,160,421,288" FontSize="18" TextAlignment="Justify" 
+                	VerticalAlignment="Center" Foreground="#00897b" Opacity=".9" 
+                	FontWeight="DemiBold" Height="37"><Run Text="Confirm:"/></TextBlock>
+                <PasswordBox Margin="604,151,174,297" Foreground="#00897b"
+                             Name="User_confirm"
+                             FontSize="15" materialDesign:HintAssist.Hint="Confirm your password"/>
+                <materialDesign:PackIcon Kind="AccountOutline" Height="36" Width="31" Margin="10,206,0,0" Foreground="#00897b"/>
+                <TextBlock Margin="46,205,864,243" FontSize="18" TextAlignment="Justify" 
+                	VerticalAlignment="Center" Foreground="#00897b" Opacity=".9" 
+                	FontWeight="DemiBold" Height="37"><Run Text="User Name:"/></TextBlock>
+                <TextBox Margin="161,205,647,243" Foreground="#00897b"
+                         Name="User_userName"
+                         FontSize="15" materialDesign:HintAssist.Hint="UserName for your Account"/>
+                <materialDesign:PackIcon Kind="Timer" Height="37" Width="31" Margin="448,205,0,0" Foreground="#00897b"/>
+                <TextBlock Margin="484,205,421,243" FontSize="18" TextAlignment="Justify" 
+                	VerticalAlignment="Center" Foreground="#00897b" Opacity=".9" 
+                	FontWeight="DemiBold" Height="37"><Run Text="Date:"/></TextBlock>
+                <DatePicker Margin="604,208,174,243" materialDesign:HintAssist.Hint="Select the day of today"
+                            Foreground="#00897b" Name="User_date" >
+                </DatePicker>
+                <Button Margin="385,340,523,97" Height="Auto"  FontSize="19" Background="#607d8b" Foreground="White" Visibility="Visible"> Save </Button>
+                <Button Margin="864,439,10,10" Height="Auto"  FontSize="19" Background=" #795548" Foreground="White" Visibility="Visible" Content="Show users" Click="Button_Click"/>
+
+            </Grid>
+        </materialDesign:ColorZone>
+        <TextBlock VerticalAlignment="Bottom" Opacity="0.3" FontStyle="Italic" Foreground="Red"> Developed by:Nati@RHEMA</TextBlock>
+    </Grid>
+</UserControl>

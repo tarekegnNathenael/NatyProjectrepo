@@ -1,0 +1,249 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:materialMenu="clr-namespace:MaterialMenu;assembly=MaterialMenu"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign ="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:newLife"
+        xmlns:Custom="http://metro.mahapps.com/winfx/xaml/controls"
+        x:Class="newLife.Whole"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d"
+        Title="Hospital Patient's Management System" Height="710" Width="1300" Icon="Image/icon.png"
+       BorderBrush=" #3f51b5" BorderThickness="3"  >
+
+
+    <Grid Name="GridOne" Background="#6D4C41" Margin="0,0,2,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="68"/>
+            <RowDefinition Height="39"/>
+            <RowDefinition/>
+            <RowDefinition Height="0*"/>
+        </Grid.RowDefinitions>
+        <Grid Name="menu" Grid.Row="0" Margin="0,0,0,10">
+            <Menu DockPanel.Dock="Top" Background="#212121" Foreground="#FAFAFA">
+                <MenuItem Header="_File" Width="113" FontSize="16"  >
+
+                    <MenuItem Header="_Open" Command="Open">
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon Kind="FolderPlus" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="_Save As" Command="Save" >
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon Kind="ContentSaveAll" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="New" Command="New" >
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon Kind="NewBox" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="recent file" >
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon Kind="File" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Exit" Command="Close" >
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon Kind="Close" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="_Edit" Width="113" FontSize="16">
+
+                    <MenuItem Header="_Undo" Command="Undo">
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon Kind="Undo" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+
+                    <MenuItem Header="_Redo" Command="Redo" >
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon Kind="Redo" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Copy" Command="Copy" >
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon Kind="ContentCopy" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Cut" Command="Cut" >
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon Kind="ContentCut" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Paste" Command="Paste" >
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon Kind="ContentPaste" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Font" >
+
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="_View" Width="113" FontSize="16">
+
+                    <MenuItem Header="Home">
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon Kind="Home" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="_Help" Width="133" FontSize="16">
+
+                    <MenuItem Header=" help Create Account">
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon Kind="HelpCircle" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="future feature" >
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon Kind="Run" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="General support"  >
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon Kind="Help" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="Account" Width="163" FontSize="12"  Margin="598,10,0,0" HorizontalAlignment="Right">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="Account" />
+                    </MenuItem.Icon>
+                    <MenuItem Header="logout"  >
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon Kind="Logout" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Setting" >
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon Kind="Settings" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+            </Menu>
+
+        </Grid>
+        <Grid Name="bar" Margin="0,58,0,0" Height="70" VerticalAlignment="Top" Grid.RowSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="760*"/>
+                <ColumnDefinition Width="531*"/>
+            </Grid.ColumnDefinitions>
+            <ToolBarTray Background="#212121" Margin="0,0,0,22" Grid.ColumnSpan="2">
+
+
+                <ToolBar Style="{DynamicResource MaterialDesignToolBar}" Background="#212121" Margin="10,0,0,0" Width="401">
+                    <Button ToolTip="Save">
+                        <materialDesign:PackIcon Kind="ContentSave" Background="#212121" Foreground="#FFFFFF"/>
+                    </Button>
+                    <Separator />
+                    <Button ToolTip="Cut">
+                        <materialDesign:PackIcon Kind="ContentCut" Background="#212121" Foreground="#FFFFFF"/>
+                    </Button>
+                    <Separator />
+                    <Button ToolTip="Copy">
+                        <materialDesign:PackIcon Kind="ContentCopy" Background="#212121" Foreground="#FFFFFF"/>
+                    </Button>
+                    <Separator />
+                    <Button ToolTip="Paste">
+                        <materialDesign:PackIcon Kind="ContentPaste" Background="#212121" Foreground="#FFFFFF" Width="26"/>
+                    </Button>
+                    <Button ToolTip="Print">
+                        <materialDesign:PackIcon Kind="Printer" Background="#212121" Foreground="#FFFFFF" Width="26"/>
+                    </Button>
+
+                </ToolBar>
+            </ToolBarTray>
+
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="359" />
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="115"/>
+                <RowDefinition Height="172*"/>
+
+            </Grid.RowDefinitions>
+            <Grid Grid.Column="0" Name="side" Margin="0,0,81,0" Grid.RowSpan="2" Background="#263238">
+
+                <Grid Margin="0,0,0,2" Grid.Column="0">
+
+                    <Menu HorizontalAlignment="Left" Width="278" Background="#263238" Margin="0,10,-10,0" >
+
+                        <MenuItem Header="WELCOME"   FontSize="22" Height="54" Background="#0091ea" FontFamily="Georgia" Foreground="#FFFFFF" Width="272">
+
+                        </MenuItem>
+                        <MenuItem Header="New Patient" FontSize="22" Height="60" Background="#0091ea" FontFamily="Georgia" 
+                              Foreground="White" Width="272"
+                               Click="MenuItem_Patient" BorderBrush="Azure" >
+
+
+                        </MenuItem>
+                        <MenuItem Header="Update" FontSize="22" Height="60" Background="#0091ea" 
+                                  FontFamily="Georgia"
+                              Foreground="White" Width="272" Click="MenuItem_Click_2"
+                               />
+                        <MenuItem Header="Report" FontSize="22" Height="60" Background="#0091ea"  FontFamily="Georgia"
+                              Foreground="White" Width="272" Click="MenuItem_Click"
+                               >
+
+
+                        </MenuItem>
+                        <MenuItem Header="Search" FontSize="22" Height="60" Background="#0091ea" FontFamily="Georgia" 
+                              Foreground="White" Width="272" Click="MenuItem_Click_3"
+                               >
+                            <MenuItem.Icon>
+                                <materialDesign:PackIcon Kind="AccountSearch" Height="76" Margin="0,-30,-10,-30" Width="24" />
+                            </MenuItem.Icon>
+
+                        </MenuItem>
+                        <MenuItem Header="Add Bed" FontSize="22" Height="56" Background="#0091ea"  FontFamily="Georgia"
+                              Foreground="White" Width="272" Click="MenuItem_Click_7"
+                              HorizontalAlignment="Center"
+                               >
+                            <MenuItem.Icon>
+                                <materialDesign:PackIcon Kind="Sofa" Height="76" Margin="3,-30,-2,-30" Width="15" />
+                            </MenuItem.Icon>
+
+                        </MenuItem>
+                        <MenuItem Header="Show Bed" FontSize="22" Height="56" Background="#0091ea" FontFamily="Georgia"
+                              Foreground="White" Width="272" 
+                              HorizontalAlignment="Center" Click="MenuItem_Click_9"
+                               >
+                            <MenuItem.Icon>
+                                <materialDesign:PackIcon Kind="Sofa" Height="76" Margin="3,-30,-8,-30" Width="21" />
+                            </MenuItem.Icon>
+
+                        </MenuItem>
+                        <MenuItem Header="Add User" FontSize="22" Height="56" Background="#0091ea"  FontFamily="Georgia"
+                              Foreground="White" Width="272"
+                              HorizontalAlignment="Center" Click="MenuItem_Click_8"
+                               >
+                            <MenuItem.Icon>
+                                <materialDesign:PackIcon Kind="AccountMultiplePlus" Height="67" Margin="0,-21,-7,-30" Width="23" />
+                            </MenuItem.Icon>
+
+                        </MenuItem>
+
+                    </Menu>
+                    <TextBlock VerticalAlignment="Bottom" Opacity="0.3" FontStyle="Italic" Foreground="Red"> Developed by:Nati@RHEMA</TextBlock>
+                </Grid>
+
+
+            </Grid>
+
+            <Grid Name="center" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="283,0,0,0" Background="#0097a7"
+                  >
+                <TextBlock VerticalAlignment="Bottom" Opacity="0.3" FontStyle="Italic" Foreground="Red"> Developed by:Nati@RHEMA</TextBlock>
+            </Grid>
+
+
+        </Grid>
+    </Grid>
+
+</Window>

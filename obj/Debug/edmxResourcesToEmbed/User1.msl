@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="newLifeModel2StoreContainer" CdmEntityContainer="DBnewLifeEntities">
+    <EntitySetMapping Name="Register_User">
+      <EntityTypeMapping TypeName="newLifeModel2.Register_User">
+        <MappingFragment StoreEntitySet="Register_User">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="Second_Name" ColumnName="Second_Name" />
+          <ScalarProperty Name="Phone_No" ColumnName="Phone_No" />
+          <ScalarProperty Name="Password_user" ColumnName="Password_user" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,155 @@
+﻿<UserControl  x:Class="newLife.NewPatient"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign ="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:newLife"
+             mc:Ignorable="d" 
+             d:DesignHeight="551" d:DesignWidth="1022"
+             Background="White">
+    <Grid>
+        <materialDesign:ColorZone Height="375" Mode="Accent"  Background="White" CornerRadius="10"
+                                  materialDesign:ShadowAssist.ShadowDepth ="Depth0" >
+
+            <Grid Margin="0,0,0,10">
+                <materialDesign:Card Height="38" Background="#0091ea">
+                    <TextBlock Margin="10,2" FontFamily="Georgia" FontSize="30" VerticalAlignment="Center" TextAlignment="Center">Register patients and Attendants !</TextBlock>
+                </materialDesign:Card>
+                <TextBlock  Margin="0,66,883,270" FontSize="18" TextAlignment="Justify" 
+                           VerticalAlignment="Center" Foreground="#1277BD" FontWeight="DemiBold">First Name:</TextBlock>
+                <TextBox Name="First_Name" Margin="134,61,770,270" Foreground="#1277BD"
+                         FontSize="12"
+                         materialDesign:HintAssist.Hint="Enter FirstName"></TextBox>
+                <TextBlock  Margin="358,68,537,273" FontSize="18" TextAlignment="Justify" 
+                           VerticalAlignment="Center" Foreground="#1277BD" FontWeight="DemiBold" Text="Middle Name:" />
+                <TextBlock  Margin="700,68,213,273" FontSize="18" TextAlignment="Justify" 
+                           VerticalAlignment="Center" Foreground="#1277BD" FontWeight="DemiBold" Text="Last Name:" />
+                <TextBox x:Name="PLastName" Margin="814,56,42,275" 
+                         materialDesign:HintAssist.Hint="Enter Last Name"
+                         Foreground="#1277BD" FontSize="12"/>
+                <RadioButton x:Name="PMale" Content="Male" Foreground="#1277BD"  Checked ="RadioButton_Checked"
+                         HorizontalAlignment="Left" Margin="119,175,0,0" VerticalAlignment="Top" Height="20" Width="75"/>
+                <RadioButton x:Name="Pfemale" Content="Female"
+                             Checked ="RadioButton_Checked"
+                             Foreground="#1277BD" HorizontalAlignment="Left" 
+                             Margin="222,175,0,0" VerticalAlignment="Top" Height="20" Width="74"/>
+                <TextBlock  Margin="0,164,908,177" FontSize="18" TextAlignment="Justify" 
+                           VerticalAlignment="Center" Foreground="#1277BD" FontWeight="DemiBold" Text="Sex:" />
+                <TextBlock  Margin="0,114,937,222" FontSize="18" TextAlignment="Justify" 
+                           VerticalAlignment="Center" Foreground="#1277BD" FontWeight="DemiBold" Text="Address:" />
+                <TextBlock  Margin="358,120,542,221" FontSize="18" TextAlignment="Justify" 
+                           VerticalAlignment="Center" Foreground="#1277BD" FontWeight="DemiBold" Text="Zone:" />
+                <TextBlock  Margin="700,166,213,175" FontSize="18" TextAlignment="Justify" 
+                           VerticalAlignment="Center" Foreground="#1277BD" FontWeight="DemiBold" Text="Town:" />
+                <TextBlock  Margin="700,119,213,218" FontSize="18" TextAlignment="Justify" 
+                           VerticalAlignment="Center" Foreground="#1277BD" FontWeight="DemiBold" Text="Kebele:" Height="28" />
+
+                <ComboBox x:Name="PRegionCombo"  HorizontalAlignment="Left" Margin="134,117,0,0" VerticalAlignment="Top" 
+                          materialDesign:HintAssist.Hint="Select Address"
+                          Foreground="#1277BD" Width="108" Height="30" SelectedValuePath="Content">
+                    <ComboBoxItem  Content="Oromia"  Foreground="#1277BD"/>
+                    <ComboBoxItem  Content="Amhara" Foreground="#1277BD"/>
+                    <ComboBoxItem  Content="Tigrai" Foreground="#1277BD"/>
+                    <ComboBoxItem  Content="SNNP" Foreground="#1277BD"/>
+                    <ComboBoxItem  Content="Gambela" Foreground="#1277BD"/>
+                    <ComboBoxItem  Content="Afar" Foreground="#1277BD"/>
+                    <ComboBoxItem  Content="Harari" Foreground="#1277BD"/>
+                    <ComboBoxItem  Content="Addis Abeba" Foreground="#1277BD"/>
+                    <ComboBoxItem  Content="DireDawa" Foreground="#1277BD"/>
+
+
+
+                </ComboBox>
+                <TextBox x:Name="PZone" Margin="485,109,397,222"
+                         materialDesign:HintAssist.Hint="Enter Zone"
+                         Foreground="#1277BD" FontSize="12" />
+                <TextBlock  Margin="0,213,916,123" FontSize="18" TextAlignment="Justify" 
+                           VerticalAlignment="Center" Foreground="#1277BD" FontWeight="DemiBold" Text="Check in:" />
+                <DatePicker Name="PCheckIn" Margin="134,213,770,123" Foreground="#1277BD" FontSize="12"
+                            materialDesign:HintAssist.Hint=" Enter dd/mm/yyyy"/>
+
+                <TextBox x:Name="PMiddleName" Margin="485,57,397,274"
+                         materialDesign:HintAssist.Hint="Enter middleName"
+                         Foreground="#1277BD" FontSize="12"/>
+
+                <TextBox x:Name="PTown" Margin="814,156,42,175" 
+                         materialDesign:HintAssist.Hint="Enter town"
+                         Foreground="#1277BD" FontSize="12"/>
+                <TextBox x:Name="POccupation" Margin="135,258,770,74"
+                         materialDesign:HintAssist.Hint="Enter occupation"
+                         Foreground="#1277BD" FontSize="12"/>
+                <TextBlock  Margin="0,258,908,73" FontSize="18" TextAlignment="Justify" 
+                           VerticalAlignment="Center" Foreground="#1277BD" FontWeight="DemiBold" Text="Occupation:" />
+                <TextBox x:Name="PKebele" Margin="814,106,42,225"
+                         materialDesign:HintAssist.Hint="Enter Kebele"
+                         Foreground="#1277BD" FontSize="12"/>
+                <TextBlock  Margin="358,262,542,79" FontSize="18" TextAlignment="Justify" 
+                           VerticalAlignment="Center" Foreground="#1277BD" FontWeight="DemiBold" Text="Religion:" />
+                <TextBox x:Name="PReligion" Margin="485,257,397,75"
+                         materialDesign:HintAssist.Hint="Enter Religion"
+                         Foreground="#1277BD" FontSize="12"/>
+                <TextBlock  Margin="358,223,542,118" FontSize="18" TextAlignment="Justify" 
+                           VerticalAlignment="Center" Foreground="#1277BD" FontWeight="DemiBold" Text="Status:" />
+                <TextBlock  Margin="0,321,893,10" FontSize="18" TextAlignment="Justify" 
+                           VerticalAlignment="Center" Foreground="#1277BD" FontWeight="DemiBold" Text="Referred From :" />
+
+
+                <ComboBox x:Name="PMarriage"  HorizontalAlignment="Left" FontSize="12"
+                          materialDesign:HintAssist.Hint="Select Status" SelectedValuePath="Content"
+                          Margin="485,213,0,0" VerticalAlignment="Top" Foreground="#1277BD" Width="140" Height="30">
+                    <ComboBoxItem  Content="Single"  Foreground="#1277BD"/>
+                    <ComboBoxItem  Content="Maried" Foreground="#1277BD"/>
+
+
+
+
+                </ComboBox>
+                <TextBlock  Margin="358,166,542,175" FontSize="18" TextAlignment="Justify" 
+                           VerticalAlignment="Center" Foreground="#1277BD" FontWeight="DemiBold" Text="Age:" />
+                <TextBox x:Name="PAge" Margin="485,148,397,183" 
+                         materialDesign:HintAssist.Hint="Enter Age"
+                         Foreground="#1277BD" FontSize="12" />
+                <TextBlock  Margin="700,216,209,125" FontSize="18" TextAlignment="Justify" 
+                           VerticalAlignment="Center" Foreground="#1277BD" FontWeight="DemiBold" Text="Ethinicity:" />
+                <TextBox x:Name="Pethinicity" Margin="814,208,42,123" 
+                         materialDesign:HintAssist.Hint="Enter ethinicity"
+                         Foreground="#1277BD" FontSize="12"/>
+                <TextBox x:Name="Phospital" Margin="134,321,770,10" 
+                         materialDesign:HintAssist.Hint="From __ hospiatal "
+                         Foreground="#1277BD" FontSize="12"/>
+                <Button Margin="644,317,42,10" Background="#2196f3" Height="Auto" FontSize="20" Click="Button_Click" Content=" Click here to Register Attendant">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <TextBlock TextDecorations="underline" >
+                    <ContentPresenter />
+                            </TextBlock>
+                        </ControlTemplate>
+                    </Button.Template>
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Foreground" Value="#2196f3" />
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="true">
+                                    <Setter Property="Foreground" Value="#FF5722" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+            </Grid>
+
+        </materialDesign:ColorZone>
+        <materialDesign:ColorZone Height="166" Margin="0,375,0,0">
+            <Grid>
+                <Button Margin="443,72,462,52" Background ="#2196f3" Height="Auto"  FontSize="20" Content="Register" Click="Register"  />
+                <TextBlock Name="ErrorMessageForPatients" Margin="334,0,100,123" Foreground="Red" FontSize="25" FontFamily="Arial" FontStyle="Italic"
+                           FontWeight="Heavy"/>
+
+
+            </Grid>
+
+        </materialDesign:ColorZone>
+    </Grid>
+
+</UserControl>

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="newLifeModel3" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="NewPatient">
+    <Key>
+      <PropertyRef Name="Patient_Id" />
+    </Key>
+    <Property Name="Patient_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Patient_FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Patient_MiddleName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Patient_LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Patient_Region" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Patient_Zone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Patient_Town" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Patient_Kebele" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Patient_Sex" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Patient_Age" Type="Int16" Nullable="false" />
+    <Property Name="Patient_CheckIn" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Patient_Marriage_Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Patient_Ethinicity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Patient_occupation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Patient_Religion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Patient_Referred_From" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Patient_Bed" Type="Int32" />
+    <Property Name="Patient_Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Patient_Checkout" Type="DateTime" Precision="0" />
+    <Property Name="Patient_Room" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Patient_WardName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Patient_WardFloor" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="NewPatient1" Relationship="Self.FK_Bed_id" FromRole="NewPatient" ToRole="NewPatient1" />
+    <NavigationProperty Name="NewPatient2" Relationship="Self.FK_Bed_id" FromRole="NewPatient1" ToRole="NewPatient" />
+  </EntityType>
+  <Association Name="FK_Bed_id">
+    <End Role="NewPatient" Type="Self.NewPatient" Multiplicity="1" />
+    <End Role="NewPatient1" Type="Self.NewPatient" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="NewPatient">
+        <PropertyRef Name="Patient_Id" />
+      </Principal>
+      <Dependent Role="NewPatient1">
+        <PropertyRef Name="Patient_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="newLife_New_Patients" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="NewPatients" EntityType="Self.NewPatient" />
+    <AssociationSet Name="FK_Bed_id" Association="Self.FK_Bed_id">
+      <End Role="NewPatient" EntitySet="NewPatients" />
+      <End Role="NewPatient1" EntitySet="NewPatients" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="newLifeModel4StoreContainer" CdmEntityContainer="BuildingAdder">
+    <EntitySetMapping Name="Buildings">
+      <EntityTypeMapping TypeName="newLifeModel4.Building">
+        <MappingFragment StoreEntitySet="Building">
+          <ScalarProperty Name="Building_Name" ColumnName="Building_Name" />
+          <ScalarProperty Name="Building_totalStory" ColumnName="Building_totalStory" />
+          <ScalarProperty Name="B_WardName" ColumnName="B_WardName" />
+          <ScalarProperty Name="B_WardFloor" ColumnName="B_WardFloor" />
+          <ScalarProperty Name="B_RoomNumber" ColumnName="B_RoomNumber" />
+          <ScalarProperty Name="B_RoomCapacity" ColumnName="B_RoomCapacity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

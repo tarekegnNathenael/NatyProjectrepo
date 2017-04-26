@@ -1,0 +1,95 @@
+﻿<UserControl x:Class="newLife.Beds"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign ="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:newLife"
+             mc:Ignorable="d" 
+             
+             d:DesignHeight="551" d:DesignWidth="1022"
+             Background="White">
+    <Grid Background="White">
+        <materialDesign:ColorZone Height="551" Background="White">
+            <Grid Margin="10,10,-10,-10">
+
+                <TextBlock Margin="271,5,303,496" FontSize="37" Foreground="#0091ea" TextAlignment="Center"
+                   FontFamily="Arial" FontStyle="Oblique" FontWeight="SemiBold" HorizontalAlignment="Center" 
+                       materialDesign:HintAssist.HintOpacity="0.5"
+                       materialDesign:HintAssist.Hint="enter building name"
+                       Width="448" >Register New Bed</TextBlock>
+                <TextBlock Margin="10,109,842,395" FontSize="20"
+                           Foreground="#0091ea" VerticalAlignment="Center" >Building Name:</TextBlock>
+
+                <ComboBox materialDesign:HintAssist.Hint="select here" Name="comboBed"
+                          Margin="200,113,600,394" Height="44" Foreground="#0091ea"
+                          ItemsSource="{Binding}"
+                          SelectedValuePath="Content" SelectionChanged="ComboBox_SelectionChanged" >
+                   
+                   
+                </ComboBox>
+
+
+                <TextBlock Margin="10,171,842,353" FontSize="20" Foreground="#0091ea" VerticalAlignment="Center" Text="Ward Name:" />
+                <ComboBox materialDesign:HintAssist.Hint="select here"
+                          Margin="200,171,600,339" Height="41" Foreground="#0091ea" SelectedValuePath="Content" >
+                    <ComboBoxItem >to be added from database</ComboBoxItem>
+                    <ComboBoxItem >to be added from database</ComboBoxItem>
+                    <ComboBoxItem >to be added from database</ComboBoxItem>
+                </ComboBox>
+
+                <TextBlock Margin="10,234,842,290" FontSize="20" Foreground="#0091ea" VerticalAlignment="Center" Text="Ward's Floor:" />
+                <ComboBox Margin="200,224,600,283" x:Name="Ward_Name" Height="44" Foreground="#0091ea" SelectedValuePath="Content" >
+                    <ComboBoxItem  Content="floor1"/>
+                    <ComboBoxItem  Content="floor2"/>
+                    <ComboBoxItem Content="Floor 1"/>
+                </ComboBox>
+                <TextBlock Margin="10,297,870,227" VerticalAlignment="Center" FontSize="20" Text="Room No:" Foreground="#0091ea" />
+                <TextBox Margin="200,278,600,222" x:Name="Room_name" FontSize="20" Foreground="#0091ea"/>
+                <TextBlock Margin="10,346,870,154" VerticalAlignment="Center" FontSize="20" Text="Bed No:" Foreground="#0091ea" />
+                <TextBox Margin="200,329,600,171" x:Name="Bed_number" FontSize="20" Foreground="#0091ea"/>
+                <Grid Margin="271,488,613,10">
+                    <Button   Background="#0091ea" FontSize="25" Height="Auto" Margin="0,0,10,0">Add</Button>
+                </Grid>
+
+                <Grid Margin="525,72,10,10" Background="#F0FFF0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="172*"/>
+                        <RowDefinition Height="305*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Margin="0,112,306,33" FontSize="20" Foreground="#0091ea" VerticalAlignment="Center" Text="Buildings Name:" />
+                    <TextBox Margin="207,86,77,33" x:Name="buildingName" FontSize="20" Foreground="#0091ea"/>
+                    <TextBlock Margin="0,168,306,282" FontSize="20" Foreground="#0091ea" VerticalAlignment="Center" Text="Total Store No:" Grid.RowSpan="2" />
+                    <TextBox Margin="207,144,77,282" x:Name="buildingStory" FontSize="20" Foreground="#0091ea" Grid.RowSpan="2"/>
+                    <TextBlock Margin="0,48,306,230" FontSize="20" Foreground="#0091ea" VerticalAlignment="Center" Text="Ward Name:" Grid.Row="1" />
+                    <TextBox Margin="207,28,77,230" x:Name="buildingWardName" FontSize="20" Foreground="#0091ea" Grid.Row="1"/>
+                    <TextBlock Margin="0,97,306,181" FontSize="20" Foreground="#0091ea" VerticalAlignment="Center" Text="Ward's Floor:" Grid.Row="1" />
+                    <TextBox Margin="207,80,77,181" x:Name="buildingWardFloor" FontSize="20" Foreground="#0091ea" Grid.Row="1"/>
+                    <TextBlock Margin="0,150,306,128" FontSize="20" Foreground="#0091ea" VerticalAlignment="Center" Text="Ward's Room:" Grid.Row="1" />
+                    <TextBox Margin="207,135,70,128" x:Name="buildingRoom" FontSize="20" Foreground="#0091ea" Grid.Row="1"/>
+                    <TextBlock Margin="0,199,295,79" FontSize="20" Foreground="#0091ea" VerticalAlignment="Center" Text="Rooms Capacity:" Grid.Row="1" />
+                    <TextBox Margin="207,182,70,79" x:Name="buildingRoomCapacity" FontSize="20" Foreground="#0091ea" Grid.Row="1"/>
+                    <Button Margin="207,248,168,10" x:Name="Button_Submit_Bed" Content="Submit" FontSize="20" Grid.Row="1" Height="Auto" Background="#0091ea" Click="Button_Submit_Bed_Click"  />
+                    <TextBlock Margin="10,12,0,119" FontSize="20" Foreground="IndianRed" VerticalAlignment="Center"  TextAlignment="Center" Text="Register the Building and Ward Status" Height="38" />
+                    <TextBlock Margin="75,64,53,67" FontSize="20"
+                               Foreground="Red" VerticalAlignment="Center" 
+                               TextAlignment="Center" Height="38"  Name="BuildingError" />
+
+                </Grid>
+                <Button   Background="#0091ea" FontSize="25" Height="Auto" Margin="24,488,895,10">
+                    <materialDesign:PackIcon Kind="Refresh" Height="43" Width="56"/>
+                </Button>
+                <TextBlock Margin="10,405,870,119" VerticalAlignment="Center" FontSize="20" Text="Bed Status:" Foreground="#0091ea" />
+                <ComboBox Margin="200,405,600,102" x:Name="Ward_Name_Copy" Height="44" Foreground="#0091ea" SelectedValuePath="Content" >
+                    <ComboBoxItem  Content="Active"/>
+                    <ComboBoxItem  Content="not Active"/>
+
+                </ComboBox>
+            </Grid>
+        </materialDesign:ColorZone>
+        <TextBlock VerticalAlignment="Bottom" Opacity="0.3" FontStyle="Italic" Foreground="Red"> Developed by:Nati@RHEMA</TextBlock>
+
+    </Grid>
+
+
+</UserControl>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="newLifeModel3.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="NewPatient">
+    <Key>
+      <PropertyRef Name="Patient_Id" />
+    </Key>
+    <Property Name="Patient_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Patient_FirstName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Patient_MiddleName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Patient_LastName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Patient_Region" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Patient_Zone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Patient_Town" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Patient_Kebele" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Patient_Sex" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Patient_Age" Type="smallint" Nullable="false" />
+    <Property Name="Patient_CheckIn" Type="date" Nullable="false" />
+    <Property Name="Patient_Marriage_Status" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Patient_Ethinicity" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Patient_occupation" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Patient_Religion" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Patient_Referred_From" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Patient_IDCard" Type="ntext" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="newLifeModel3StoreContainer">
+    <EntitySet Name="NewPatient" EntityType="Self.NewPatient" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

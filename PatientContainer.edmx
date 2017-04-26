@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="newLifeModel3.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="NewPatient">
+          <Key>
+            <PropertyRef Name="Patient_Id" />
+          </Key>
+          <Property Name="Patient_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Patient_FirstName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Patient_MiddleName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Patient_LastName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Patient_Region" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Patient_Zone" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Patient_Town" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Patient_Kebele" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Patient_Sex" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Patient_Age" Type="smallint" Nullable="false" />
+          <Property Name="Patient_CheckIn" Type="date" Nullable="false" />
+          <Property Name="Patient_Marriage_Status" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Patient_Ethinicity" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Patient_occupation" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Patient_Religion" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Patient_Referred_From" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Patient_Bed" Type="int" />
+          <Property Name="Patient_Status" Type="nvarchar" MaxLength="50" />
+          <Property Name="Patient_Checkout" Type="date" />
+          <Property Name="Patient_Room" Type="nvarchar(max)" />
+          <Property Name="Patient_WardName" Type="nchar" MaxLength="10" />
+          <Property Name="Patient_WardFloor" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <Association Name="FK_Bed_id">
+          <End Role="NewPatient" Type="Self.NewPatient" Multiplicity="1" />
+          <End Role="NewPatient1" Type="Self.NewPatient" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="NewPatient">
+              <PropertyRef Name="Patient_Id" />
+            </Principal>
+            <Dependent Role="NewPatient1">
+              <PropertyRef Name="Patient_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="newLifeModel3StoreContainer">
+          <EntitySet Name="NewPatient" EntityType="Self.NewPatient" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Bed_id" Association="Self.FK_Bed_id">
+            <End Role="NewPatient" EntitySet="NewPatient" />
+            <End Role="NewPatient1" EntitySet="NewPatient" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="newLifeModel3" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="NewPatient">
+          <Key>
+            <PropertyRef Name="Patient_Id" />
+          </Key>
+          <Property Name="Patient_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Patient_FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Patient_MiddleName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Patient_LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Patient_Region" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Patient_Zone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Patient_Town" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Patient_Kebele" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Patient_Sex" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Patient_Age" Type="Int16" Nullable="false" />
+          <Property Name="Patient_CheckIn" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Patient_Marriage_Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Patient_Ethinicity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Patient_occupation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Patient_Religion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Patient_Referred_From" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Patient_Bed" Type="Int32" />
+          <Property Name="Patient_Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Patient_Checkout" Type="DateTime" Precision="0" />
+          <Property Name="Patient_Room" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Patient_WardName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Patient_WardFloor" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_Bed_id">
+          <End Role="NewPatient" Type="Self.NewPatient" Multiplicity="1" />
+          <End Role="NewPatient1" Type="Self.NewPatient" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="NewPatient">
+              <PropertyRef Name="Patient_Id" />
+            </Principal>
+            <Dependent Role="NewPatient1">
+              <PropertyRef Name="Patient_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PatientContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="NewPatients" EntityType="Self.NewPatient" />
+          <AssociationSet Name="FK_Bed_id" Association="Self.FK_Bed_id">
+            <End Role="NewPatient" EntitySet="NewPatients" />
+            <End Role="NewPatient1" EntitySet="NewPatients" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="newLifeModel3StoreContainer" CdmEntityContainer="PatientContext">
+          <EntitySetMapping Name="NewPatients">
+            <EntityTypeMapping TypeName="newLifeModel3.NewPatient">
+              <MappingFragment StoreEntitySet="NewPatient">
+                <ScalarProperty Name="Patient_Id" ColumnName="Patient_Id" />
+                <ScalarProperty Name="Patient_FirstName" ColumnName="Patient_FirstName" />
+                <ScalarProperty Name="Patient_MiddleName" ColumnName="Patient_MiddleName" />
+                <ScalarProperty Name="Patient_LastName" ColumnName="Patient_LastName" />
+                <ScalarProperty Name="Patient_Region" ColumnName="Patient_Region" />
+                <ScalarProperty Name="Patient_Zone" ColumnName="Patient_Zone" />
+                <ScalarProperty Name="Patient_Town" ColumnName="Patient_Town" />
+                <ScalarProperty Name="Patient_Kebele" ColumnName="Patient_Kebele" />
+                <ScalarProperty Name="Patient_Sex" ColumnName="Patient_Sex" />
+                <ScalarProperty Name="Patient_Age" ColumnName="Patient_Age" />
+                <ScalarProperty Name="Patient_CheckIn" ColumnName="Patient_CheckIn" />
+                <ScalarProperty Name="Patient_Marriage_Status" ColumnName="Patient_Marriage_Status" />
+                <ScalarProperty Name="Patient_Ethinicity" ColumnName="Patient_Ethinicity" />
+                <ScalarProperty Name="Patient_occupation" ColumnName="Patient_occupation" />
+                <ScalarProperty Name="Patient_Religion" ColumnName="Patient_Religion" />
+                <ScalarProperty Name="Patient_Referred_From" ColumnName="Patient_Referred_From" />
+                <ScalarProperty Name="Patient_Bed" ColumnName="Patient_Bed" />
+                <ScalarProperty Name="Patient_Status" ColumnName="Patient_Status" />
+                <ScalarProperty Name="Patient_Checkout" ColumnName="Patient_Checkout" />
+                <ScalarProperty Name="Patient_Room" ColumnName="Patient_Room" />
+                <ScalarProperty Name="Patient_WardName" ColumnName="Patient_WardName" />
+                <ScalarProperty Name="Patient_WardFloor" ColumnName="Patient_WardFloor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="newLifeModel3StoreContainer" CdmEntityContainer="PatientContext">
+    <EntitySetMapping Name="NewPatients">
+      <EntityTypeMapping TypeName="newLifeModel3.NewPatient">
+        <MappingFragment StoreEntitySet="NewPatient">
+          <ScalarProperty Name="Patient_Id" ColumnName="Patient_Id" />
+          <ScalarProperty Name="Patient_FirstName" ColumnName="Patient_FirstName" />
+          <ScalarProperty Name="Patient_MiddleName" ColumnName="Patient_MiddleName" />
+          <ScalarProperty Name="Patient_LastName" ColumnName="Patient_LastName" />
+          <ScalarProperty Name="Patient_Region" ColumnName="Patient_Region" />
+          <ScalarProperty Name="Patient_Zone" ColumnName="Patient_Zone" />
+          <ScalarProperty Name="Patient_Town" ColumnName="Patient_Town" />
+          <ScalarProperty Name="Patient_Kebele" ColumnName="Patient_Kebele" />
+          <ScalarProperty Name="Patient_Sex" ColumnName="Patient_Sex" />
+          <ScalarProperty Name="Patient_Age" ColumnName="Patient_Age" />
+          <ScalarProperty Name="Patient_CheckIn" ColumnName="Patient_CheckIn" />
+          <ScalarProperty Name="Patient_Marriage_Status" ColumnName="Patient_Marriage_Status" />
+          <ScalarProperty Name="Patient_Ethinicity" ColumnName="Patient_Ethinicity" />
+          <ScalarProperty Name="Patient_occupation" ColumnName="Patient_occupation" />
+          <ScalarProperty Name="Patient_Religion" ColumnName="Patient_Religion" />
+          <ScalarProperty Name="Patient_Referred_From" ColumnName="Patient_Referred_From" />
+          <ScalarProperty Name="Patient_Bed" ColumnName="Patient_Bed" />
+          <ScalarProperty Name="Patient_Status" ColumnName="Patient_Status" />
+          <ScalarProperty Name="Patient_Checkout" ColumnName="Patient_Checkout" />
+          <ScalarProperty Name="Patient_Room" ColumnName="Patient_Room" />
+          <ScalarProperty Name="Patient_WardName" ColumnName="Patient_WardName" />
+          <ScalarProperty Name="Patient_WardFloor" ColumnName="Patient_WardFloor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
